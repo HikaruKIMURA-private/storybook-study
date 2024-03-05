@@ -13,30 +13,30 @@ export default {
 };
 
 export const Default = {
- parameters: {
-   msw: {
-     handlers: [
-       rest.get(
-         'https://jsonplaceholder.typicode.com/todos?userId=1',
-         (req, res, ctx) => {
-           return res(ctx.json(MockedState.tasks));
-         }
-       ),
-     ],
-   },
- },
+  parameters: {
+    msw: {
+      handlers: [
+        rest.get(
+          'https://jsonplaceholder.typicode.com/todos?userId=1',
+          (req, res, ctx) => {
+            return res(ctx.json(MockedState.tasks));
+          }
+        ),
+      ],
+    },
+  },
 };
 export const Error = {
- parameters: {
-   msw: {
-     handlers: [
-       rest.get(
-         'https://jsonplaceholder.typicode.com/todos?userId=1',
-         (req, res, ctx) => {
-           return res(ctx.status(403));
-         }
-       ),
-     ],
-   },
- },
+  parameters: {
+    msw: {
+      handlers: [
+        rest.get(
+          'https://jsonplaceholder.typicode.com/todos?userId=1',
+          (_req, res, ctx) => {
+            return res(ctx.status(403));
+          }
+        ),
+      ],
+    },
+  },
 };
