@@ -1,16 +1,16 @@
-import "../src/index.css";
+import '../src/index.css'
 
 // Registers the msw addon
-import { initialize, mswLoader } from "msw-storybook-addon";
+import { initialize, mswLoader } from 'msw-storybook-addon'
 
 // Initialize MSW
-initialize();
+initialize()
 
 //👇 Configures Storybook to log the actions( onArchiveTask and onPinTask ) in the UI.
 /** @type { import('@storybook/react').Preview } */
 const preview = {
   parameters: {
-    actions: { argTypesRegex: "^on[A-Z].*" },
+    actions: { argTypesRegex: '^on[A-Z].*' },
     controls: {
       matchers: {
         color: /(background|color)$/i,
@@ -19,6 +19,6 @@ const preview = {
     },
   },
   loaders: [mswLoader],
-};
+}
 
-export default preview;
+export default preview

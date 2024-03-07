@@ -1,10 +1,9 @@
+import TaskList from './TaskList'
+import * as TaskStories from './Task.stories'
 
-import TaskList from './TaskList';
-import * as TaskStories from './Task.stories';
+import { Provider } from 'react-redux'
 
-import { Provider } from 'react-redux';
-
-import { configureStore, createSlice } from '@reduxjs/toolkit';
+import { configureStore, createSlice } from '@reduxjs/toolkit'
 
 // A super-simple mock of the state of the store
 export const MockedState = {
@@ -18,7 +17,7 @@ export const MockedState = {
   ],
   status: 'idle',
   error: null,
-};
+}
 
 // A super-simple mock of a redux store
 const Mockstore = ({ taskboxState, children }) => (
@@ -30,10 +29,10 @@ const Mockstore = ({ taskboxState, children }) => (
           initialState: taskboxState,
           reducers: {
             updateTaskState: (state, action) => {
-              const { id, newTaskState } = action.payload;
-              const task = state.tasks.findIndex((task) => task.id === id);
+              const { id, newTaskState } = action.payload
+              const task = state.tasks.findIndex((task) => task.id === id)
               if (task >= 0) {
-                state.tasks[task].state = newTaskState;
+                state.tasks[task].state = newTaskState
               }
             },
           },
@@ -43,7 +42,7 @@ const Mockstore = ({ taskboxState, children }) => (
   >
     {children}
   </Provider>
-);
+)
 
 export default {
   component: TaskList,
@@ -51,13 +50,11 @@ export default {
   decorators: [(story) => <div style={{ padding: '3rem' }}>{story()}</div>],
   tags: ['autodocs'],
   excludeStories: /.*MockedState$/,
-};
+}
 
 export const Default = {
-  decorators: [
-    (story) => <Mockstore taskboxState={MockedState}>{story()}</Mockstore>,
-  ],
-};
+  decorators: [(story) => <Mockstore taskboxState={MockedState}>{story()}</Mockstore>],
+}
 
 export const WithPinnedTasks = {
   decorators: [
@@ -65,7 +62,7 @@ export const WithPinnedTasks = {
       const pinnedtasks = [
         ...MockedState.tasks.slice(0, 5),
         { id: '6', title: 'Task 6 (pinned)', state: 'TASK_PINNED' },
-      ];
+      ]
 
       return (
         <Mockstore
@@ -76,10 +73,10 @@ export const WithPinnedTasks = {
         >
           {story()}
         </Mockstore>
-      );
+      )
     },
   ],
-};
+}
 
 export const Loading = {
   decorators: [
@@ -94,7 +91,7 @@ export const Loading = {
       </Mockstore>
     ),
   ],
-};
+}
 
 export const Empty = {
   decorators: [
@@ -109,4 +106,4 @@ export const Empty = {
       </Mockstore>
     ),
   ],
-};
+}

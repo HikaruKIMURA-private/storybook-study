@@ -1,10 +1,10 @@
-import Task from './Task';
+import Task from './Task'
 
 export default {
   component: Task,
   title: 'Task',
   tags: ['autodocs'],
-};
+}
 
 export const Default = {
   args: {
@@ -14,7 +14,7 @@ export const Default = {
       state: 'TASK_INBOX',
     },
   },
-};
+}
 
 export const Pinned = {
   args: {
@@ -23,7 +23,7 @@ export const Pinned = {
       state: 'TASK_PINNED',
     },
   },
-};
+}
 
 export const Archived = {
   args: {
@@ -32,4 +32,4 @@ export const Archived = {
       state: 'TASK_ARCHIVED',
     },
   },
-};
+}
