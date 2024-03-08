@@ -3769,6 +3769,11 @@
   "resolved" "https://registry.npmjs.org/chownr/-/chownr-2.0.0.tgz"
   "version" "2.0.0"
 
+"chromatic@^11.0.6":
+  "integrity" "sha512-wwJEHlml552yYGVFQuHXTR8TsZCGOhh3Q3F5IsoHFuGh04of12Xc5XyLF3bScD8lh7XKkbEYl3+Zc2j34C2q9w=="
+  "resolved" "https://registry.npmjs.org/chromatic/-/chromatic-11.0.6.tgz"
+  "version" "11.0.6"
+
 "ci-info@^3.2.0":
   "integrity" "sha512-NIxF55hv4nSqQswkAeiOi1r83xy8JldOFDTWiug55KBu9Jnblncd2U6ViHmYgHf01TPZS77NJBhBMKdWj9HQMQ=="
   "resolved" "https://registry.npmjs.org/ci-info/-/ci-info-3.9.0.tgz"
